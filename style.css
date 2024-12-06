@@ -1,0 +1,74 @@
+/* style.css 파일 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+#piano {
+    display: flex;
+    align-items: flex-start; /* 키가 위로 정렬되도록 */
+    position: relative;
+    padding: 10px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.key {
+    border: none;
+    margin: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: all 0.1s ease;
+}
+
+.white {
+    background-color: #f5f5f5;
+    width: 60px;
+    height: 300px;
+    z-index: 1;
+}
+
+.black {
+    background-color: #333;
+    width: 40px;
+    height: 180px;
+    margin-left: -20px;
+    margin-right: -20px;
+    z-index: 2;
+}
+
+.key.active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.key.black.active {
+    background-color: #444;
+}
+
+.key.white.active {
+    background-color: #ddd;
+}
+
+.key.black {
+    margin-left: -20px; /* 검은 키가 흰 키 위에 오도록 */
+    margin-right: -20px;
+    border-radius: 0 0 5px 5px;
+}
+
+.key.white:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.key.white:last-child {
+    border-radius: 0 5px 5px 0;
+}
